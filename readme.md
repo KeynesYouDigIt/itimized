@@ -2,7 +2,11 @@
 
 ##contributing
 1. clone
-2. (optional) create a virtual environment then run `pip install requirements.txt`
+2. (optional) create a virtual environment
+
+3. Run `pip install requirements.txt`
+
+you may need to run `sudo apt install libpq-dev python-dev` to make sure the server can work with psycopg2, the ORM adapter for Postgres.
 
 3. Create a postgres database and note the name, username and password
     and add an enviromental variable
