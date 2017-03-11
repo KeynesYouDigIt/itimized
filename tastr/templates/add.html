@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% from "macros.html" import render_field %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/select2.css') }}">
+{% endblock %}
+
+{% block content %}
+    <br><br>
+    <h1>{{ name }} </h1>
+    <br><br>
+
+    <form action="" method="post">
+        {{form.hidden_tag()}}
+        <table>
+            {{ render_field(form.ingredients, size=50, id="tags") }}
+            {{ render_field(form.name, size=50) }}
+            {{ render_field(form.instructions, cols=70, rows=30) }}
+            <tr class= "submit">
+                <td></td>
+                <td><button type='submit'>Post it!</button></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
+
+{% block sidebar%}
+    {% if existing_recipe %}
+        <a href="{{ url_for('kill_recipe', recipe_id = existing_recipe.id) }}">
+            delete me. </a>
+    {% endif %}
+    &nbsp &nbsp &nbsp
+    <a href="{{ url_for('starter') }}"> nevermind.</a>
+{% endblock %}
+
+{% block scripts %}
+    {{super()}}
+    <script src="{{ url_for('static', filename='js/vendor/select2.min.js') }}"></script>
+    <script>
+    $(document).ready(function(){
+        var _tags = {{ all_tags()|map(attribute='name')|list|tojson|safe }};
+        $('#tags').select2({tags: _tags, tokenSeparators: [","]});
+    });
+</script>
+{% endblock %}

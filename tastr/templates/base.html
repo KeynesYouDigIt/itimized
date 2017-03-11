@@ -1,0 +1,77 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Tastr</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block styles %}
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% endblock %}
+    {% block scripts %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+        </script>
+        <script src="//apis.google.com/js/platform.js?onload=start">
+        </script>
+        <script src="{{ url_for('static', filename='js/vendor/jquery-1.11.2.min.js') }}">
+        </script>
+        <script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}">
+        </script>
+        <script src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}">
+        </script>
+        <script src="{{ url_for('static', filename='js/Menu.js') }}">
+        </script>
+        <script src="{{ url_for('static', filename='js/social_auth.js') }}">
+        </script>
+    {% endblock %}
+    </head>
+    {% block sidebar %}
+    <a id="menu">
+        main menu
+    </a>
+   <nav id='sidebar'>
+        <a href={{ url_for('catch_ingredient') }}> recipies by ingredient </a>
+        |
+      {% if current_user.is_authenticated %}
+        <a href={{ url_for('logout') }}> logout </a>
+        |
+        <a href={{ url_for('to_start') }}> home </a>
+      {% else %}
+        <a href={{ url_for('login') }}> login </a>
+        |
+        <a href={{ url_for('sign_up') }}> sign up </a>
+      {% endif %}
+      <br><br>
+  </nav>
+    {% endblock %}
+    <body>
+        <br>
+    <article class='flashes'>
+      {% with messages=get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+            {{message}}
+            {% endfor%}
+          {% endif %}
+        {% endwith %}
+    </article>
+    <br><br>
+      {% block content%}
+      {% endblock %}
+      <hr><hr>
+      <footer>
+          <a href="{{url_for('explain_api')}}">Check out the API</a>
+        <br><br>
+          >tastr -- site design by KeynesYouDigIt
+        <br>
+          <a href='https://www.github.com/KeynesYouDigIt'>github</a> | <a href="https://www.linkedin.com/in/vincent-buscarello-0561651a">LinkedIn</a>
+        <br>
+      </footer>
+    </body>
+</html>

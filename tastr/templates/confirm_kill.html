@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method="post">
+<br><br>
+	<button onclick="goBack()"> hang on, let me go back</button>
+<br><br>
+<button type="submit"> yes, delete this. </button>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+{% endblock %}

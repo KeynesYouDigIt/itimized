@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% from "macros.html" import render_field %}
+{% block content %}
+
+<h2>Hello again {{active_user.username}}, welcome to your home page. </h2>
+<br>-<br><br>
+Add a new recipe! Start with the name.
+<br><br><br>
+<form action="" method="post">
+    {{form.hidden_tag()}}
+    <table>
+        {{ render_field(form.name, size=50)}}
+        <tr class= "submit">
+            <td></td>
+        <td><button type='submit'> get started </button></td>
+        </tr>
+    </table>
+</form>
+<br><br><br>
+<hr>
+<h2> your previous recipes </2>
+<br><br>
+-
+<br>
+{% for recipe in recipes%}
+    {{recipe.name}}
+    <br>
+    <a href="{{ url_for('add', recipe=recipe.name) }}">
+        edit or remove  </a>|
+    <a href="{{ url_for('render_user_recipe', user_id=active_user.id, recipe_name=recipe.name) }}">
+        view</a>
+    <br><br><br>
+{% endfor %}
+
+{% endblock %}

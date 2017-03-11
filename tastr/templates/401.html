@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <title>unauthorized</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<br><br><br><br>
+    <h1>HOLD IT RIGHT THERE!!!</h1>
+<p>You are trying to get to a page that requires a login. so, like, login.</p>
+<p>either that or you just tried to edit someone else's recipe. be original, make your own!</p>
+<hr>
+<p> in more formal terms...</p>
+    <br><br>
+    <p><i>
+        The server could not verify that you are authorized to access the URL requested.
+    </i></p>
+    <p>
+        You either supplied the wrong credentials (e.g. a bad password),
+        or your browser doesn't understand how to supply the credentials required.
+    </p>
+</body>
+</html>
+
+{% endblock %}
+<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->

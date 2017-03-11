@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% from "macros.html" import render_field %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/select2.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1>pick ingredients to see!</h1>
+    <br>
+    <form action="" method="post">
+        {{form.hidden_tag()}}
+        <table>
+                {{ render_field(form.ingredients, size=450, id="tags") }}
+            <tr class= "submit">
+                <td><button type='submit'>show me!</button></td>
+            </tr>
+        </table>
+    </form>
+{% if not empty%}
+    {% if not recipe_list %}
+    <br><em>no recipes with all those ingredients found, try removing a few.</em><br>
+    {% else %}
+    <h1> Recipes containing the selected ingredients </h1>
+        {% for recipe in recipe_list %}
+            <br>
+            {{recipe.name}} <_
+            <a href="{{ url_for('render_user_recipe', user_id=recipe.author, recipe_name=recipe.name) }}">
+                view</a>
+            {% if current_user.id == recipe.author %}
+                           / <a href="{{ url_for('add', recipe=recipe.name) }}">
+                        edit or remove  </a>
+            {% endif %}
+            <br><br><br>
+        {% endfor %}
+    {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+    {{super()}}
+    <script src="{{ url_for('static', filename='js/vendor/select2.min.js') }}"></script>
+    <script>
+    $(document).ready(function(){
+        var _tags = {{ all_tags()|map(attribute='name')|list|tojson|safe }};
+        $('#tags').select2({tags: _tags, tokenSeparators: [","]});
+    });
+</script>
+{% endblock %}

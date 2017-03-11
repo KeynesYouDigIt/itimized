@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <title>Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<br><br><br><br>
+    <h1>500 error</h1>
+    <p>the server ain't doing so great. Gives us an hour to fix.</p>
+    <br><br>
+    for the devs -- {{error}}
+</body>
+</html>
+
+{% endblock %}
+<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->

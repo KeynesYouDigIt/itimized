@@ -1,0 +1,134 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+* {
+    font-family: 'Titillium Web', sans-serif;
+    /*grid border for dev*/
+   	/*border:2px dotted red;*/
+
+ }
+
+html {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+h1.main {
+   font-size: 550%;
+}
+h1 {
+    font-size: 250%;
+}
+
+body {
+  padding: 50px;
+  align-content: center;
+  align-self: auto;
+  width: 100%;
+}
+
+h1,
+body,
+content,
+form {
+   display: inline-block;
+   text-align: center;
+   background-color: #800514;
+   color: #FFFFFF;
+}
+
+input,
+textarea,
+input:active,
+input:focus {
+    outline: none;
+    -webkit-text-fill-color: inherit;
+    -webkit-box-shadow: #800514;
+    -webkit-autofill: #800514;
+    padding: 0px;
+    background-color: inherit;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+}
+
+textarea {
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-bottom: 0px;
+}
+
+a {
+  color: #00A878;
+  padding: 3px 7px 7px 3px;
+  text-decoration: none;
+  font-size: 23px;
+}
+
+a:hover,
+a:focus {
+  color: #D8F1A0;
+  text-decoration: none;
+}
+
+/* The side navigation menu */
+
+
+#menu {
+    top: 8px;
+    left: 5px;
+    position: fixed;
+}
+
+
+.open {
+    top: 15px;
+    left: 5px;
+    transform: translate(20px,20px) !important;
+    position: fixed;
+    transition: 0.6s;
+}
+#sidebar {
+    position: fixed;
+    text-align: left;
+    padding: 5px;
+    z-index: 0;
+    transform: translate(-1000px,1000px);
+    color: #FFFFFF;
+    margin: 3px;
+}
+
+button {
+  overflow: visible;
+  color: #FFFFFF;
+  background-color: #00A878;
+  text-transform: none;
+}
+
+button,
+select {
+  color: #FFFFFF;
+  background-color: #006B4D;
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+article.flashes {
+    position: static;
+}

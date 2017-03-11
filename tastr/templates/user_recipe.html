@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h1>{{recipe.name}} </h1>
+    <br>
+    <em>submitted by {{recipe.get_author().username}}</em>
+    <br><br>
+    <p>{{recipe.instructions}}</p>
+    <em>to see more recipes using an ingredient, click it below</em>
+    <br>
+    {% for ing in recipe._ingredients %}
+        <a href="{{ url_for('catch_ingredient', ingredients = ing.name) }}">
+            {{ ing.name }} </a>
+    {% endfor %}
+    <br><br>
+    {% if recipe.author == active_user.id %}
+        <a href="{{ url_for('add', recipe = recipe.name) }}">
+            edit this recipe </a>
+    {% endif %}
+{% endblock %}

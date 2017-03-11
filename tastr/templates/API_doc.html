@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Thanks for your interest in the tastr rest API</h1>
+<p><em>Please note the database is designed for development and may go offline temporarily if the site grows faster than expected.</em></p>
+<br><br>
+<h2>it is currently possible to access any data on a Recipe or Ingredient in our database.</h2>
+<hr>
+<p>use the username to get an authors recipes</p>
+tastr.com/recipes/author/<em>username</em>
+<br><hr><br>
+<p>To get a single Recipe, the call is in the format </p>
+tastr.com/recipes/<em>recipe id number </em>
+<br><br>
+<p>Ingredients are similar</p>
+tastr.com/ingredients/<em>recipe id number </em>
+<br><br>
+<br><hr><br>
+<p> get full lists of each via </p>
+tastr.com/recipes/all
+<br><br>
+tastr.com/ingredients/all
+
+{% endblock%}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% from "macros.html" import render_field %}
+{% block content %}
+<h1>tastr</h1>
+<br><br><br><br>
+        <h1>{{ hfour }}</h1>
+        <br><br><br>
+
+        <em><a href={{ url_for('login') }}> I already have an account
+            <br> / <br> I want to sign in using my google account </a></em>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <form action="" method="post">
+            {{form.hidden_tag()}}
+            <table>
+                {{ render_field(form.username, size=50) }}
+                {{ render_field(form.password, size=50) }}
+                {{ render_field(form.password_confirm, size=50) }}
+                {{ render_field(form.Email, size=50) }}
+                <tr class= "submit">
+                    <td></td>
+                    <td><button type='submit'> sign up </button></td>
+                </tr>
+            </table>
+        </form>
+
+{% endblock %}

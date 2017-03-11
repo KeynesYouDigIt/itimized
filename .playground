@@ -1,6 +1,6 @@
 {
-  "project_name": "NimblePoet is a simple text only blog",
-  "project_description": "NimblePoet is a simple text only blog in Python using the Flask framework.",
+  "project_name": "tastrPoet is a simple text only blog",
+  "project_description": "tastrPoet is a simple text only blog in Python using the Flask framework.",
   "show_files": [
     "db_switch.py",
     "app.yaml",

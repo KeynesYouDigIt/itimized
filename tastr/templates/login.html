@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% from "macros.html" import render_field %}
+
+{% block scripts %}
+<script>
+var state = '{{state}}';
+</script>
+{{super()}}
+{% endblock %}
+
+
+{% block content %}
+<br><br><br><br>
+<h1 class="main">tastr</h1>
+<p id="loading">
+Sign in using your Google account
+<br><br>
+</p>
+<div id="signInButton">
+<span class="g-signin"
+  data-scope="openid email"
+  data-clientid="1089223167652-1kirudri2m3dvej34v20intqvvv55kbm.apps.googleusercontent.com"
+  data-redirecturi="postmessage"
+  data-accesstype="offline"
+  data-cookiepolicy="none"
+  data-callback="signInCallback"
+  data-approvalprompt="force">
+</span>
+</div>
+<hr>
+<font size="3"> ...or, to use your Tastr account, sign in below, or
+       <a href={{ url_for('sign_up') }}>  create a new account
+       </a> </font>
+       <br><br><br>
+            <form action="" method="post">
+                {{form.hidden_tag()}}
+                <table>
+                    {{ render_field(form.username, size=50) }}
+                    {{ render_field(form.password, size=50) }}
+                    <tr class= "submit">
+                        <td></td>
+                        <td><button type='submit'> login </button></td></tr>
+                </table>
+                <br><br>
+            </form>
+    </section>
+<br><br><br><br>
+{% endblock %}
