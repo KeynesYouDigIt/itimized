@@ -1,4 +1,4 @@
-#tastr is a lightweight social media manager
+#itimizer is a lightweight item catalog
 
 ##contributing
 1. clone

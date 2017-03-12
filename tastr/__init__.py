@@ -15,7 +15,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)
-app.config['DEBUG'] = True
+app.config['DEBUG'] = False
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 try:
 	app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
