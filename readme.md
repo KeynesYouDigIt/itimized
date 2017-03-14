@@ -24,3 +24,32 @@ you may need to run `sudo apt install libpq-dev python-dev` to make sure the ser
 4. run `python main.py runserver`
 
 site should now be running on localhost.
+
+###########
+#Information on the AWS server this app is deployed on
+
+This README.md file should include all of the following:
+i. The IP address and SSH port so your server can be accessed by the reviewer.
+
+54.236.42.128
+
+ii. The complete URL to your hosted web application.
+http://54.236.128/login
+
+iii. A summary of software you installed and configuration changes made
+UFW, Apache2, Mod_wsgi, git, everything in requirements.txt
+
+
+changed several configurations in
+/var/www/html/hitWSGI.wsgi
+/etc/apache2/sites-available/000-default.conf
+
+
+iv. A list of any third-party resources you made use of to complete this project.
+
+
+https://help.ubuntu.com/community/UFW
+
+http://flask.pocoo.org/snippets/8/
+
+http://modwsgi.readthedocs.io/en/develop/user-guides/configuration-guidelines.html
