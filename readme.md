@@ -1,6 +1,6 @@
-#itimizer is a lightweight item catalog
+# itimizer is a lightweight item catalog
 
-##contributing
+## contributing
 1. clone
 2. (optional) create a virtual environment
 
@@ -25,8 +25,8 @@ you may need to run `sudo apt install libpq-dev python-dev` to make sure the ser
 
 site should now be running on localhost.
 
-##Its deployed!
-###currently no domain, sorry!
+## Its deployed!
+### currently no domain, sorry!
 
 http://54.236.36.77/login
 
