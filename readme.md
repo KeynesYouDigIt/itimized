@@ -25,11 +25,10 @@ you may need to run `sudo apt install libpq-dev python-dev` to make sure the ser
 
 site should now be running on localhost.
 
-###########
-#Its deployed!
-##currently no domain, sorry!
+##Its deployed!
+###currently no domain, sorry!
 
-http://54.236.128/login
+http://54.236.36.77/login
 
 http://flask.pocoo.org/snippets/8/
 http://modwsgi.readthedocs.io/en/develop/user-guides/configuration-guidelines.html
